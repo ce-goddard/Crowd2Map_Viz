@@ -1,0 +1,7 @@
+scripts/*.geojson
+scripts/*.mbtiles
+scripts/*.mbtiles-journal
+
+node_modules/
+data/Tanzania*
+data/*.mbtiles

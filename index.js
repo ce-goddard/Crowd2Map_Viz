@@ -4,10 +4,10 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibG9iZW5pY2hvdSIsImEiOiJjajdrb2czcDQwcHR5MnFyc
 window.map = new mapboxgl.Map({
   container: "map", // container id
   style: "mapbox://styles/lobenichou/cjk09rxji5jjm2tr1f6jg94u6", //stylesheet location
-  center: [24.323, -19.036], // starting position
+  center: [37.546,-5.813], // starting position
   zoom: 5.8,
   maxZoom: 14,
-  minZoom: 1,
+  minZoom: 5,
   hash: true
 });
 
@@ -25,7 +25,7 @@ var range = document.getElementById('range');
 var time = document.getElementById('time');
 var buildings = document.getElementById('buildings');
 
-var startDate = new Date(2016, 6, 1);
+var startDate = new Date(2015, 10, 1);
 var playback = false;
 
 var dayStats = {};
@@ -103,7 +103,7 @@ function loadBuildingStats(callback) {
       callback(JSON.parse(xmlhttp.responseText));
     }
   }
-  xmlhttp.open("GET", "tanzania_buildings_by_day.json", true);
+  xmlhttp.open("GET", "./scripts/tanzania_buildings_by_day.json", true);
   xmlhttp.send();
 }
 

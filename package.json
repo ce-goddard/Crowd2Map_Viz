@@ -1,0 +1,36 @@
+{
+  "name": "@mapbox/malaria-mapping",
+  "version": "1.0.0",
+  "description": "Volunteers from all over the world are contributing to ending FGM by mapping roads and buildings in the areas where girls are most at risk.",
+  "main": "centroid.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mapbox/malaria-mapping.git"
+  },
+  "keywords": [
+    "malaria",
+    "hot",
+    "osm",
+    "mapbox",
+    "qa"
+  ],
+  "author": "Lukas Martinelli <me@lukasmartinelli.ch>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mapbox/malaria-mapping/issues"
+  },
+  "homepage": "https://github.com/mapbox/malaria-mapping#readme",
+  "dependencies": {
+    "@turf/turf": "^4.1.0",
+    "commander": "^2.9.0",
+    "csv-write-stream": "^2.0.0",
+    "progress-stream": "^2.0.0",
+    "split": "^1.0.0",
+    "sqlite3": "^4.0.1",
+    "stringify-stream": "^1.0.5",
+    "which-polygon": "^2.1.0"
+  }
+}
