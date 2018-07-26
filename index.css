@@ -11,7 +11,7 @@ body {
 }
 
 #buildings {
-  color: #4198d4;
+  color: #28A5D9;
 }
 
 .dark.button {
@@ -19,23 +19,17 @@ body {
 }
 
 .button:hover, .button.active {
-  background-color: #52a1d8;
+  background-color: #28A5D9;
 }
 
 .fill-bg {
-  background-color: #222630;
+  background-color: #4b5352;
 }
 
 .fill-control {
-  background-color: #505050;
+  background-color: #94A1A0;
 }
 
-.flag {
-  display: inline;
-  max-width: 30px;
-  padding-top: 2px;
-  padding-right: 5px;
-}
 
 @media (max-width: 700px) {
   .projects {
@@ -96,7 +90,7 @@ body {
     display:flex;
     -webkit-box-orient:vertical;
     flex-direction:column;
-    height:100%;
+    height: auto;
   }
   .sidebar-inner .flex-scroll {
     overflow-y:scroll;
@@ -106,16 +100,16 @@ body {
   }
 }
 
-.mapboxgl-ctrl-group {
+/* .mapboxgl-ctrl-group {
   background: #222630;
 }
 
 .mapboxgl-ctrl-group > button {
   background-color: #222630;
   border-color: rgb(28, 31, 36);
-}
+} */
 
-.mapboxgl-ctrl-group > button:hover {
+/* .mapboxgl-ctrl-group > button:hover {
   background-color: rgb(86, 83, 83);
 }
 
@@ -129,4 +123,4 @@ body {
 
 .mapboxgl-ctrl-icon.mapboxgl-ctrl-compass > span.arrow {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%0A%09%3Cpolygon%20fill%3D%27%238e8e8e%27%20points%3D%276%2C9%2010%2C1%2014%2C9%27%2F%3E%0A%09%3Cpolygon%20fill%3D%27%23CCCCCC%27%20points%3D%276%2C11%2010%2C19%2014%2C11%20%27%2F%3E%0A%3C%2Fsvg%3E")
-}
+} */

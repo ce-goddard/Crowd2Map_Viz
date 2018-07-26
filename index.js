@@ -3,12 +3,11 @@ var mobile = document.documentElement.clientWidth <= 700;
 mapboxgl.accessToken = 'pk.eyJ1IjoibG9iZW5pY2hvdSIsImEiOiJjajdrb2czcDQwcHR5MnFycmhuZmo4eWwyIn0.nUf9dWGNVRnMApuhQ44VSw';
 window.map = new mapboxgl.Map({
   container: "map", // container id
-  style: "mapbox://styles/lobenichou/cjk09rxji5jjm2tr1f6jg94u6", //stylesheet location
-  center: [37.546,-5.813], // starting position
-  zoom: 5.8,
+  style: "mapbox://styles/lobenichou/cjk09rxji5jjm2tr1f6jg94u6?fresh=true", //stylesheet location
+  center: [34.782683,-6.338669], // starting position
+  zoom: 6.15,
   maxZoom: 14,
-  minZoom: 5,
-  hash: true
+  minZoom: 5
 });
 
 
@@ -234,4 +233,3 @@ function getQueryVariable(variable) {
     }
     console.log('Query variable %s not found', variable);
 }
-
