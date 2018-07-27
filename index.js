@@ -178,50 +178,6 @@ function flyHandler(id, options) {
   });
 }
 
-// flyHandler('botswana', {
-//   center: [22.966, -21.918],
-//   zoom: 5.5,
-//   startDay: 140,
-//   speed: 450
-// });
-// flyHandler('zambia', {
-//   center: [25.155, -13.605],
-//   startDay: 210,
-//   zoom: 5.5,
-//   speed: 450
-// });
-// flyHandler('zimbabwe', {
-//   center: [27.234, -19.072],
-//   zoom: 5.5,
-//   speed: 300
-// });
-
-// flyHandler('laos', {
-//   center: [105.9620, 16.6489],
-//   zoom: 8.4,
-//   startDay: 90,
-//   speed: 300
-// });
-// flyHandler('cambodia', {
-//   center: [104.5779, 11.8601],
-//   zoom: 7,
-//   startDay: 190,
-//   speed: 500
-// });
-
-// flyHandler('guatemala', {
-//   center: [-91.302, 15.225],
-//   startDay: 60,
-//   zoom: 7.5,
-//   speed: 500
-// });
-// flyHandler('honduras', {
-//   center: [-86.214, 15.330],
-//   zoom: 6.5,
-//   startDay: 190,
-//   speed: 500
-// });
-
 function getQueryVariable(variable) {
     var query = window.location.search.substring(1);
     var vars = query.split('&');
