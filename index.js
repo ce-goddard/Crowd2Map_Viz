@@ -4,12 +4,11 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibG9iZW5pY2hvdSIsImEiOiJjajdrb2czcDQwcHR5MnFyc
 window.map = new mapboxgl.Map({
   container: "map", // container id
   style: "mapbox://styles/lobenichou/cjk09rxji5jjm2tr1f6jg94u6?fresh=true", //stylesheet location
-  center: [34.782683,-6.338669], // starting position
-  zoom: 6.15,
+  center: [32.43975,-6.58698], // starting position 
+  maxBounds: [[19.416599, -11.874457], [46.95735, -0.82930]], 
   maxZoom: 14,
   minZoom: 5
 });
-
 
 var sidebar = document.getElementById('sidebar');
 if (!mobile) {
@@ -65,6 +64,7 @@ function play(v) {
 loadBuildingStats(function(stats) {
   dayStats = stats;
   map.on('load', function() {
+    map.resize()
     // TODO: The query string parsing could be done nicer
     var minDay = isNaN(parseInt(getQueryVariable('minday'))) ? 160 : parseInt(getQueryVariable('minday'));
     var day = isNaN(parseInt(getQueryVariable('day'))) ? 160 : parseInt(getQueryVariable('day'));
