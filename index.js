@@ -7,7 +7,7 @@ window.map = new mapboxgl.Map({
   center: [32.43975,-6.58698], // starting position 
   maxBounds: [[19.416599, -11.874457], [46.95735, -0.82930]], 
   maxZoom: 14,
-  minZoom: 5
+  minZoom: 4
 });
 
 var sidebar = document.getElementById('sidebar');
