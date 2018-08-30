@@ -2,6 +2,7 @@ scripts/*.geojson
 scripts/*.mbtiles
 scripts/*.mbtiles-journal
 
+*.DS_Store
 node_modules/
 data/Tanzania*
 data/*.mbtiles
