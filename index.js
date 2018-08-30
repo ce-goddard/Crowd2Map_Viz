@@ -28,9 +28,9 @@ var playback = false;
 
 var dayStats = {};
 
-var styleByDay = throttle(function (day) {
+var styleByWeek = throttle(function (week) {
   var layers = ['tanzania-building-point', 'tanzania-building-shape'];
-  var filter = ["<=", "@day", day];
+  var filter = ["<=", "@day", week * 7];
 
   if (map.loaded()) {
     layers.forEach(function(layer) {
@@ -46,14 +46,14 @@ var updateCounts = throttle(function(total, date) {
 
 function play(v) {
   range.value = v;
-  var date = moment(startDate).add(range.value, 'days');
+  var date = moment(startDate).add(v, 'weeks');
 
   var sum = 0;
-  for(var d = 0; d <= v; d++) {
+  for(var d = 0; d <= (v * 7); d++) {
     sum += dayStats[d] || 0;
   }
   updateCounts(sum, date);
-  styleByDay(v);
+  styleByWeek(v);
 
   // If range hit's the end show play button again
   if (parseInt(range.value) >= parseInt(range.max)) {
@@ -63,19 +63,20 @@ function play(v) {
 
 loadBuildingStats(function(stats) {
   dayStats = stats;
+  console.log(stats);
   map.on('load', function() {
     map.resize()
     // TODO: The query string parsing could be done nicer
-    var minDay = isNaN(parseInt(getQueryVariable('minday'))) ? 160 : parseInt(getQueryVariable('minday'));
-    var day = isNaN(parseInt(getQueryVariable('day'))) ? 160 : parseInt(getQueryVariable('day'));
-    var speed = parseInt(getQueryVariable('speed')) || 130;
-    range.min = minDay;
-    console.log('minday', minDay, day, speed);
+    var minWeek = isNaN(parseInt(getQueryVariable('minday'))) ? 0 : parseInt(getQueryVariable('minday'));
+    var week = isNaN(parseInt(getQueryVariable('day'))) ? 0 : parseInt(getQueryVariable('day'));
+    var speed = parseInt(getQueryVariable('speed')) || 200;
 
-    styleByDay(day);
+    range.min = minWeek;
+
+    styleByWeek(week);
     playControl.addEventListener('click', setPlay);
     setTimeout(function() {
-      range.value = day;
+      range.value = week;
       setPlay(speed);
     }, 500);
   });
@@ -102,7 +103,7 @@ function loadBuildingStats(callback) {
       callback(JSON.parse(xmlhttp.responseText));
     }
   }
-  xmlhttp.open("GET", "./scripts/tanzania_buildings_by_day.json", true);
+  xmlhttp.open("GET", "./scripts/first_round/tanzania_buildings_by_day.json", true);
   xmlhttp.send();
 }
 
@@ -131,6 +132,7 @@ function setPlay(speed) {
   if (playback) return clearPlayback();
   playControl.classList.remove('play');
   playControl.classList.add('pause');
+
   playback = window.setInterval(function() {
     var value = parseInt(range.value, 10);
     play(value + 1);
@@ -144,7 +146,7 @@ function throttle(fn, threshhold, scope) {
   return function () {
     var context = scope || this;
 
-    var now = +new Date,
+    var now = Date.now(),
         args = arguments;
     if (last && now < last + threshhold) {
       // hold on to it
