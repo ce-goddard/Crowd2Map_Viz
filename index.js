@@ -103,7 +103,7 @@ function loadBuildingStats(callback) {
       callback(JSON.parse(xmlhttp.responseText));
     }
   }
-  xmlhttp.open("GET", "./scripts/first_round/tanzania_buildings_by_day.json", true);
+  xmlhttp.open("GET", "./scripts/tanzania_buildings_by_day.json", true);
   xmlhttp.send();
 }
 
